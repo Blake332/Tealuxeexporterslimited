@@ -1,26 +1,25 @@
-import nodemailer from "nodemailer";
+import Contact from "../models/Contact.js";
 
-export const sendMessage = async (req, res) => {
-  const { name, email, message } = req.body;
-
+// CREATE contact
+export const createContact = async (req, res) => {
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      }
-    });
+    const { name, email, message } = req.body;
 
-    await transporter.sendMail({
-      from: email,
-      to: process.env.EMAIL_USER,
-      subject: `New Contact Message from ${name}`,
-      text: message
-    });
+    const contact = new Contact({ name, email, message });
+    await contact.save();
 
-    res.json({ success: true, message: "Message sent successfully!" });
+    res.status(201).json(contact);
   } catch (error) {
-    res.status(500).json({ success: false, message: "Failed to send message" });
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// GET all contacts
+export const getContacts = async (req, res) => {
+  try {
+    const contacts = await Contact.find();
+    res.status(200).json(contacts);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 };
