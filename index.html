@@ -1,4 +1,4 @@
-<!doctype html><!doctype html><!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -84,11 +84,32 @@
     margin: 10px auto 20px;
     text-shadow: 2px 2px 10px black;
 }
+.buttons-and-slides {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;  /* space between button and slides */
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #0066cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.slideshow-container {
+  width: 100%;
+  max-width: 70px;
+  height: 20px;
+ 
+}
 
 /* SLIDER BOX */
 .slider {
     width: 90%;
-    max-width: 1000px;
+    max-width: 800px;
     height: 160px;
     overflow: hidden;
     border-radius: 26px;
@@ -213,7 +234,7 @@
     .card{background:var(--card); padding:20px; border-radius:12px; box-shadow:0 8px 28px var(--shadow)}
 
     /* image placeholder + helper for direct editing */
-    .img-space{width:100%; height:220px; background:#eef6ef; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#859a82; border:2px dashed #d9e8d8; font-weight:600}
+    .img-space{width:100%; height:320px; background:#eef6ef; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#859a82; border:2px dashed #d9e8d8; font-weight:600}
     .gallery img{width:100%; height:220px; object-fit:cover; border-radius:10px}
 
     /* contact */
@@ -280,8 +301,15 @@
 
     </div>
      <div class="cta">
+      <div class="buttons-and-slides"></div>
             <a href="#contact" class="btn btn-primary">Get a Quote</a>
             <a href="#products" class="btn btn-primary">View Products</a>
+   <div class="slideshow-container">    
+   </div>
+</div>
+
+</div>
+
         </div>
 
 
@@ -315,7 +343,7 @@
             <img src="TEA.jpg" />
             <img src="tea1.jpg" />
             <img src="tea_export.jpg" />
-            <img src="tealuxelogo1.jpeg" />
+            <img src="tealuxelogo1.jpg" />
             <img src="premium tea.jpg" />
             <!-- Repeat images to create seamless loop -->
              <img src="coverpage.jpeg" />
@@ -330,7 +358,7 @@
             <img src="TEA.jpg" />
             <img src="tea1.jpg" />
             <img src="tea_export.jpg" />
-            <img src="tealuxelogo1.jpeg" />
+            <img src="tealuxelogo1.jpg" />
             <img src="premium tea.jpg" />
             <!-- Repeat images to create seamless loop -->
              <img src="coverpage.jpeg" />
@@ -486,8 +514,8 @@
       </div>
 
       <div class="card">
-        <div class="img-space" data-src="tealuxelogo1.jpg">Team / Farm photo</div>
-        <h3 style="margin-top:12px">Why Choose Us?</h3>
+        <div class="img-space" data-src="teaim.jpg">Team / Farm photo</div>
+        <h5 style="margin-top:25px">Why Choose Us?</h5>
         <p>We offer competitive pricing, fresh harvest supply, efficient export processes, and guaranteed quality assurance from start to finish.</p>
       </div>
     </div>
@@ -590,7 +618,7 @@
           <h3 style="margin-top:0">Our Contact</h3>
           <p><strong>Address:</strong> Nairobi, Kenya</p>
           <p><strong>Email:</strong> tealuxeexporterslimited@gmail.com</p>
-          <p><strong>Phone:</strong> +254 116 909 719 </p>
+          <p><strong>Phone:</strong> +254 116 909 719</p>
           <div style="height:12px"></div>
           <div class="img-space" data-src="tealuxelogo1.jpg">Office / Map</div>
         </div>
@@ -674,5 +702,3 @@
   </script>
 </body>
 </html>
-
-
