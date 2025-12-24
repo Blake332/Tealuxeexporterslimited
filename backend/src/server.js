@@ -2,24 +2,22 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import contactRoutes from "./routes/contactRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
+import contactRoutes from "../routes/contactRoutes.js";
 
 dotenv.config();
 
 const app = express();
 
-// Middleware
+// middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// routes
 app.use("/api/contacts", contactRoutes);
-app.use("/api/products", productRoutes);
 
-// Test route
+// test route
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("Server running successfully");
 });
 
 const PORT = process.env.PORT || 5000;
@@ -27,5 +25,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
 
