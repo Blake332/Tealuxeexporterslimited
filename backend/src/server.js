@@ -1,27 +1,26 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-
-import contactRoutes from "./routes/contactRoutes.js";
-
-dotenv.config();
-
+// server.js
+const express = require('express');
+const path = require('path');
 const app = express();
 
-// middleware
-app.use(cors());
+// Parse JSON requests (if you have APIs)
 app.use(express.json());
 
-// routes
-app.use("/api/contacts", contactRoutes);
+// Example: API routes (adjust as needed)
+app.use('/api/users', require('./routes/users')); // example
+// Add your other routes similarly
 
-// test route
-app.get("/", (req, res) => {
-  res.send("Server running successfully");
+// Serve frontend static files
+// Replace 'public' with your actual frontend folder name if different
+app.use(express.static(path.join(__dirname, 'public')));
+
+// For any other route, serve index.html (for SPA or standard HTML)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const PORT = process.env.PORT || 5000;
-
+// Start the server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running successfully on port ${PORT}`);
 });
