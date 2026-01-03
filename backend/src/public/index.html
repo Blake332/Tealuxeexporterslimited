@@ -7,6 +7,8 @@
 
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
   <style>
     :root{
@@ -254,6 +256,22 @@
       .hero p{font-size:16px}
       .hero-slot{width:120px; height:80px}
     }
+    .social {
+  display: flex;
+  gap: 15px;
+}
+
+.social a {
+  color: #333;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social a:hover {
+  color: #0a7d5a; /* match your brand */
+  transform: translateY(-3px);
+}
+
     
         /* WhatsApp Floating Button */
         .whatsapp {
@@ -628,11 +646,26 @@
 
   <!-- FOOTER -->
   <footer>
-    <div style="max-width:1100px;margin:0 auto; display:flex; flex-direction:column; gap:10px">
-      <div>© <span id="year"></span> TEALUXE EXPORTERS LIMITED — All Rights Reserved</div>
-      <div class="social" aria-label="social links"><a href="#">Facebook</a> <a href="#">Instagram</a> <a href="#">LinkedIn</a></div>
+  <div style="max-width:1100px;margin:0 auto; display:flex; flex-direction:column; gap:10px">
+
+    <div>
+      © <span id="year"></span> TEALUXE EXPORTERS LIMITED — All Rights Reserved
     </div>
-  </footer>
+
+    <div class="social" aria-label="social links">
+      <a href="https://www.facebook.com/tealuxeexporters" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/tealuxeexporters" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/tealuxe-exporters-limited-72379a3a2/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+
+  </div>
+</footer>
 
   <!-- WhatsApp quick contact -->
   <a class="whatsapp" href="https://wa.me/254116909719" target="_blank" rel="noopener">Chat on WhatsApp</a>
