@@ -1,28 +1,15 @@
 {
   "name": "tealuxe-backend",
   "version": "1.0.0",
-  "description": "Backend API for Tealuxe Exporters Limited",
+  "description": "Tealuxe Exporters Limited backend server",
+  "type": "module",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "start": "node src/server.js"
   },
-  "keywords": [
-    "tealuxe",
-    "export",
-    "tea",
-    "node",
-    "express",
-    "api"
-  ],
-  "author": "Tealuxe Exporters Limited",
-  "license": "UNLICENSED",
   "dependencies": {
+    "express": "^4.19.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.0",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
+    "dotenv": "^16.4.5"
   }
 }
